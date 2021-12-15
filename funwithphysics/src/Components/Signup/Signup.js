@@ -39,10 +39,7 @@ export default class Signup extends Component {
     };
 
     axios
-      .post(
-        "http://localhost/funwithphysics/src/Components/Signup/funwithscience_backend/insert.php",
-        ob
-      )
+      .post("http://localhost/funwithscience_backend/insert.php", ob)
       .then((res) => {
         if (res.data === 1) {
           alert(" Registered Successfully");
