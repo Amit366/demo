@@ -13,6 +13,7 @@ import CalcThermo from "./Components/Thermodynamics/Topics/Calculator";
 import WPECalculator from "./Components/Classical_Mechanics/Topics/wpe_Calculator";
 import GravitationCalculator from "./Components/Classical_Mechanics/Topics/gravitation_Calculator";
 import PhysicsTopic from "./Components/PhysicsTopic";
+import MathsTopic from "./Components/MathsTopic";
 import MOICalculator from "./Components/Classical_Mechanics/Topics/moi_Calulator";
 import shm_Calculator from "./Components/Classical_Mechanics/Topics/shm_Calculator";
 import rotation_Calculator from "./Components/Classical_Mechanics/Topics/rotation_Calculator";
@@ -36,6 +37,7 @@ import NuclearPhysics from "./Components/Nuclear_Physics/NuclearPhysics";
 import CalcNuclear from "./Components/Nuclear_Physics/Topic/Calculator";
 import Photonics from "./Components/Photonics/Photonics";
 import CalcPhotonics from "./Components/Photonics/Topic/Calculator";
+import Contact from "./Components/Contact/Contact";
 const Home = lazy(() => {
   return Promise.all([
     import("./Components/Home/Home"),
@@ -87,7 +89,7 @@ const App = () => {
               <Home />
             </Suspense>
           </Route>
-          <Route exact path="/contact" component={Home}>
+          <Route exact path="/contact">
             <Suspense
               fallback={
                 <div className="loadingdiv">
@@ -95,7 +97,7 @@ const App = () => {
                 </div>
               }
             >
-              <Home />
+              <Contact />
             </Suspense>
           </Route>
           <Route exact path="/classicalmechanics">
@@ -109,6 +111,10 @@ const App = () => {
           <Route exact path="/physics">
             <Navbar />
             <PhysicsTopic />
+          </Route>
+          <Route exact path="/maths">
+            <Navbar />
+            <MathsTopic />
           </Route>
           <Route exact path="/Signup" component={Signup}></Route>
           <Route exact path="/Login">
